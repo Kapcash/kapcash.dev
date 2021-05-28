@@ -25,6 +25,7 @@ export default {
   components: true,
 
   buildModules: [
+    'nuxt-vite',
     '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss'
   ],

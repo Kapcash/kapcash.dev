@@ -1,44 +1,33 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        portfolio
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+    <h1>
+      Hey! I'm Florent!
+    </h1>
+    <p>
+      I am a French web developer based in Barcelona!
+    </p>
+    <ul class="inline">
+      <li>#vue</li>
+      <li>#nuxt</li>
+      <li>#nestjs</li>
+    </ul>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { Vue, Component } from 'nuxt-property-decorator'
 
-export default Vue.extend({})
+@Component
+export default class HomePage extends Vue {
+
+}
 </script>
 
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
+<style lang="postcss" scoped>
 .container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
+  @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
-*/
+
 .container {
   margin: 0 auto;
   min-height: 100vh;
