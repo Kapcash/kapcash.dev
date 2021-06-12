@@ -1,69 +1,68 @@
 <template>
-  <div class="container">
-    <h1>
-      Hey! I'm Florent!
-    </h1>
-    <p>
-      I am a French web developer based in Barcelona!
-    </p>
-    <ul class="inline">
-      <li>#vue</li>
-      <li>#nuxt</li>
-      <li>#nestjs</li>
-    </ul>
+  <div class="max-w-screen-md mx-auto">
+    <Header />
+
+    <section>
+      <h1 class="text-4xl">
+        My projects on Github
+      </h1>
+      <GithubCard
+        v-for="pinnedRepo of githubRepos"
+        :key="pinnedRepo.id"
+        :title="pinnedRepo.repo"
+        :description="pinnedRepo.description"
+        :main-language="pinnedRepo.language"
+        :language-color="pinnedRepo.languageColor"
+        :link="pinnedRepo.link"
+        :nb-stars="pinnedRepo.stars"
+        :nb-forks="pinnedRepo.forks"
+      />
+    </section>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
+import { Context } from '@nuxt/types'
+import Header from '~/components/Header.vue'
+import GithubCard from '~/components/GithubCard.vue'
+import { GithubPinnedRepo } from '~/types/github'
 
-@Component
+@Component({
+  components: {
+    Header,
+    GithubCard
+  }
+})
 export default class HomePage extends Vue {
+  githubRepos!: GithubPinnedRepo[]
 
+  async asyncData ({ $axios }: Context) {
+    const githubRepos = await $axios.$get<GithubPinnedRepo[]>('https://gh-pinned-repos-5l2i19um3.vercel.app/?username=kapcash', {
+      headers: {
+        Accept: 'application/vnd.github.v3+json'
+      },
+      params: {
+        sort: 'updated',
+        per_page: 3,
+        type: 'owner'
+      }
+    })
+
+    return {
+      githubRepos
+    }
+  }
 }
 </script>
 
 <style lang="postcss" scoped>
-.container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
+img {
+  width: 200px;
+  height: 200px;
 }
 
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.tag {
+  @apply inline text-pink-800 text-xl font-semibold mr-4;
 }
 </style>

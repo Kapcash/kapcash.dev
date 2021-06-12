@@ -19,18 +19,23 @@ export default {
   css: [
   ],
 
+  tailwindcss: {
+    cssPath: '~/assets/tailwind.css'
+  },
+
   plugins: [
   ],
 
   components: true,
 
   buildModules: [
-    'nuxt-vite',
     '@nuxt/typescript-build',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    'nuxt-svg-loader'
   ],
 
   modules: [
+    '@nuxtjs/axios'
   ],
 
   build: {
