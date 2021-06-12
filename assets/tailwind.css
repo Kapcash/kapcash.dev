@@ -2,6 +2,9 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@import './themes/prism/github-light-default.css';
+@import './themes/prism/atom-dark.css';
+
 @layer base {
   a {
     @apply inline-block;

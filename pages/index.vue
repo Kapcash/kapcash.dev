@@ -3,7 +3,7 @@
     <Header />
 
     <section>
-      <h1 class="text-4xl">
+      <h1 class="text-4xl mt-10 mb-6">
         My projects on Github
       </h1>
       <GithubCard
@@ -18,27 +18,27 @@
         :nb-forks="pinnedRepo.forks"
       />
     </section>
+
+    <section>
+      <h1 class="text-4xl mt-10 mb-6">
+        My VSCode setup
+      </h1>
+      <VSCodeSetup />
+    </section>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
 import { Context } from '@nuxt/types'
-import Header from '~/components/Header.vue'
-import GithubCard from '~/components/GithubCard.vue'
 import { GithubPinnedRepo } from '~/types/github'
 
-@Component({
-  components: {
-    Header,
-    GithubCard
-  }
-})
+@Component
 export default class HomePage extends Vue {
   githubRepos!: GithubPinnedRepo[]
 
   async asyncData ({ $axios }: Context) {
-    const githubRepos = await $axios.$get<GithubPinnedRepo[]>('https://gh-pinned-repos-5l2i19um3.vercel.app/?username=kapcash', {
+    const githubRepos = await $axios.$get<GithubPinnedRepo[]>('https://gh-pinned-repos.egoist.sh/?username=Kapcash', {
       headers: {
         Accept: 'application/vnd.github.v3+json'
       },
@@ -47,7 +47,12 @@ export default class HomePage extends Vue {
         per_page: 3,
         type: 'owner'
       }
-    })
+    }).then(res => res.map(repo => ({
+      ...repo,
+      stars: parseInt(repo.stars as string),
+      forks: parseInt(repo.forks as string),
+      link: `https://github.com/${repo.owner}/${repo.repo}`
+    })))
 
     return {
       githubRepos

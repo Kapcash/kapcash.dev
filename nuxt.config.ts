@@ -1,3 +1,5 @@
+import { NuxtConfig } from '@nuxt/types'
+
 export default {
   target: 'static',
 
@@ -39,5 +41,20 @@ export default {
   ],
 
   build: {
+    postcss: {
+      plugins: {
+        'postcss-nested': {},
+        'postcss-simple-vars': {}
+      }
+    },
+    babel: {
+      plugins: [
+        ['prismjs', {
+          languages: ['typescript'],
+          plugins: [],
+          css: false
+        }]
+      ]
+    }
   }
-}
+} as NuxtConfig

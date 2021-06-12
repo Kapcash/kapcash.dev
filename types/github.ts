@@ -5,5 +5,5 @@ export interface GithubPinnedRepo {
   description: string;
   language: string;
   stars: string;
-  forks: number;
+  forks: string;
 }

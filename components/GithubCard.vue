@@ -72,7 +72,4 @@ export default class GithubCard extends Vue {
   border: 1px solid #b7a6ad;
   cursor: pointer;
 }
-.github-card:hover .repo-title {
-  color: #358ce8;
-}
 </style>
