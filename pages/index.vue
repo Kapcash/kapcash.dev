@@ -25,6 +25,13 @@
       </h1>
       <VSCodeSetup />
     </section>
+
+    <section>
+      <h1 class="text-4xl mt-10 mb-6">
+        My latest tweets
+      </h1>
+      <TwitterTimeline />
+    </section>
   </div>
 </template>
 

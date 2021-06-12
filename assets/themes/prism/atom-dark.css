@@ -44,7 +44,6 @@ $attr: $number;
     padding: 1em;
     margin: .5em 0;
     overflow: auto;
-    border-radius: 0.3em;
   }
 
   &:not(pre) > code[class*="language-"],
