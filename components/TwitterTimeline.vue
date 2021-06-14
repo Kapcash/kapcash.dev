@@ -1,6 +1,6 @@
 <template>
-  <div id="twitter-timeline">
-    <a class="twitter-timeline" data-tweet-limit="5" data-height="800" data-theme="light" href="https://twitter.com/Kapcash?ref_src=twsrc%5Etfw">Tweets by Kapcash</a>
+  <div class="twitter-timeline">
+    <a data-tweet-limit="5" data-height="800" data-theme="light" href="https://twitter.com/Kapcash?ref_src=twsrc%5Etfw">Tweets by Kapcash</a>
   </div>
 </template>
 
@@ -27,7 +27,7 @@ export default class TwitterTimeline extends Vue {
 </script>
 
 <style lang="postcss" scoped>
-#twitter-timeline {
+.twitter-timeline {
   max-height: 500px;
   overflow: auto;
 }

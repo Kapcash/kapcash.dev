@@ -7,7 +7,7 @@
       </span>
     </div>
 
-    <p class="mt-2 mb-3">
+    <p class="repo-description mt-2 mb-3">
       {{ description }}
     </p>
 
@@ -50,11 +50,11 @@ export default class GithubCard extends Vue {
   @Prop({ type: String, required: true })
   readonly description!: string
 
-  @Prop({ type: String, required: false, default: null })
-  readonly mainLanguage!: string | null
-
   @Prop({ type: String, required: true })
   readonly link!: string
+
+  @Prop({ type: String, required: false, default: null })
+  readonly mainLanguage!: string | null
 
   @Prop({ type: Number, default: 0 })
   readonly nbStars!: number
