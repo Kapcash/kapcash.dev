@@ -4,7 +4,7 @@ export default {
   target: 'static',
 
   router: {
-    base: process.env.npm_package_name
+    base: '/portfolio/'
   },
 
   head: {
