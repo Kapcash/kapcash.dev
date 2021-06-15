@@ -8,6 +8,9 @@ module.exports = {
     '@nuxtjs/eslint-config-typescript',
     'plugin:nuxt/recommended'
   ],
+  globals: {
+    twttr: 'readonly'
+  },
   plugins: [
   ],
   // add your custom rules here

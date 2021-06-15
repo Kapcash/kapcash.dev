@@ -13,9 +13,10 @@ describe('TwitterTimeline.vue', () => {
   it('should include the twitter timeline', () => {
     const wrapper = mount(TwitterTimeline, { localVue })
 
-    const anchorTag = wrapper.find('.twitter-timeline a')
+    const anchorTag = wrapper.find('.timeline-wrapper a')
 
-    expect(anchorTag.attributes('href')).toEqual('https://twitter.com/Kapcash?ref_src=twsrc%5Etfw')
+    expect(anchorTag.attributes('href')).toEqual('https://twitter.com/Kapcash')
+    expect(anchorTag.classes()).toContain('twitter-timeline')
 
     const head = (wrapper.vm as any).$metaInfo
     expect(head.script).toBeDefined()

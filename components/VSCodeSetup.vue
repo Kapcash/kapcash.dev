@@ -1,5 +1,5 @@
 <template>
-  <pre class="language-typescript" :class="useDark ? 'dark' : 'light'">
+  <pre class="language-typescript text-xs md:text-base" :class="useDark ? 'dark' : 'light'">
     <code v-html="setupCode" />
   </pre>
 </template>
