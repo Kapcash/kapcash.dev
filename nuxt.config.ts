@@ -3,11 +3,6 @@ import { NuxtConfig } from '@nuxt/types'
 export default {
   target: 'static',
 
-  privateRuntimeConfig: {
-    spotifyClientId: process.env.SPOTIFY_CLIENT_ID,
-    spotifyClientSecret: process.env.SPOTIFY_CLIENT_SECRET
-  },
-
   router: {
     base: '/portfolio/'
   },
