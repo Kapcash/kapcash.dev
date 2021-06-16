@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-wrap flex-col md:flex-row justify-start items-center">
     <img src="~/assets/img/moi.jpg" alt="My smiling face" height="200px" width="200px" class="rounded-full object-cover border-4 border-pink-900">
-    <div class="flex flex-col flex-wrap px-4 justify-center md:justify-start flex-grow">
+    <div class="flex flex-col flex-wrap px-4 justify-center md:justify-start flex-1">
       <h1 class="my-3 font-bold small-caps text-4xl">
         Hey! I'm Florent!
       </h1>
@@ -35,6 +35,10 @@ export default class HomePage extends Vue {
 img {
   width: 200px;
   height: 200px;
+}
+
+.flex-1 {
+  flex: 1;
 }
 
 .small-caps {
