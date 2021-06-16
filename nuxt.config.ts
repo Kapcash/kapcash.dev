@@ -3,6 +3,11 @@ import { NuxtConfig } from '@nuxt/types'
 export default {
   target: 'static',
 
+  privateRuntimeConfig: {
+    spotifyClientId: process.env.SPOTIFY_CLIENT_ID,
+    spotifyClientSecret: process.env.SPOTIFY_CLIENT_SECRET
+  },
+
   router: {
     base: '/portfolio/'
   },
@@ -59,6 +64,25 @@ export default {
           css: false
         }]
       ]
+    },
+    extend (config, ctx) {
+      if (ctx.isDev) {
+        // For debugging purposes
+        config.devtool = ctx.isClient ? 'eval-source-map' : 'inline-source-map'
+      }
+
+      if (ctx.isClient) {
+        const bringUpVueTsSourceFilesForDebug = (info: any) => {
+          let $filename = 'sources://' + info.resourcePath
+          if (info.resourcePath.endsWith('.vue') && !info.query.includes('type=script')) {
+            $filename = 'webpack-generated:///' + info.resourcePath + '?' + info.hash
+          }
+          return $filename
+        }
+        if (!config.output) { config.output = {} }
+        config.output.devtoolModuleFilenameTemplate = bringUpVueTsSourceFilesForDebug
+        config.output.devtoolFallbackModuleFilenameTemplate = 'webpack:///[resource-path]?[hash]'
+      }
     }
   }
 } as NuxtConfig

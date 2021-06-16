@@ -32,6 +32,13 @@
       </h1>
       <TwitterTimeline />
     </section>
+
+    <section>
+      <h1 class="text-4xl mt-10 mb-6">
+        My latest spotify recommandation
+      </h1>
+      <SpotifyRecommandation />
+    </section>
   </div>
 </template>
 

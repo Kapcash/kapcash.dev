@@ -1,11 +1,11 @@
 <template>
-  <div class="flex flex-wrap">
+  <div class="flex flex-wrap flex-col md:flex-row justify-start items-center">
     <img src="~/assets/img/moi.jpg" alt="My smiling face" height="200px" width="200px" class="rounded-full object-cover border-4 border-pink-900">
-    <div class="flex flex-col flex-wrap px-4 items-start justify-center md:justify-start">
-      <h1 class="my-3 font-bold uppercase text-5xl">
+    <div class="flex flex-col flex-wrap px-4 justify-center md:justify-start flex-grow">
+      <h1 class="my-3 font-bold small-caps text-4xl">
         Hey! I'm Florent!
       </h1>
-      <p class="my-3 tracking-widest uppercase text-4xl">
+      <p class="my-3 tracking-widest uppercase text-3xl">
         I am a French web developer based in Barcelona!
       </p>
       <ul class="my-3">
@@ -35,6 +35,10 @@ export default class HomePage extends Vue {
 img {
   width: 200px;
   height: 200px;
+}
+
+.small-caps {
+  font-variant-caps: small-caps;
 }
 
 .tag {
