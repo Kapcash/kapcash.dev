@@ -3,10 +3,6 @@ import { NuxtConfig } from '@nuxt/types'
 export default {
   target: 'static',
 
-  router: {
-    base: '/portfolio/'
-  },
-
   head: {
     title: 'portfolio',
     htmlAttrs: {
