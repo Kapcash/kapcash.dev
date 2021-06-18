@@ -1,4 +1,6 @@
 
-* Change main color based on my Tshirt on the photo
-* Last Spotify song recommandation
+* Link to social medias
 * Link to HTML resume
+
+
+* Change main color based on my Tshirt on the photo

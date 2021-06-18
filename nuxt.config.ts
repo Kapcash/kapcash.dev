@@ -4,7 +4,7 @@ export default {
   target: 'static',
 
   head: {
-    title: 'portfolio',
+    title: "Florent Catiau-Tristant's website",
     htmlAttrs: {
       lang: 'en'
     },
@@ -14,7 +14,7 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: 'https://fav.farm/💻' }
     ]
   },
 
