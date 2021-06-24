@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@main
+        with:
+          submodules: true
 
       - name: Setup node env 🏗
         uses: actions/setup-node@v2.1.2
@@ -42,6 +44,10 @@ jobs:
 
       - name: Install dependencies 👨🏻‍💻
         run: yarn install
+
+      - name: Build resume 📝
+        working-directory: ./resume
+        run: yarn install && yarn build
 
       - name: Generate
         run: yarn generate
