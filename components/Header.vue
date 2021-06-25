@@ -9,9 +9,9 @@
         I am a French web developer based in Barcelona!
       </p>
       <ul class="my-3">
-        <li class="tag">#vue</li>
-        <li class="tag">#nuxt</li>
-        <li class="tag">#nestjs</li>
+        <li v-for="tag of tags" :key="tag" class="tag">
+          #{{ tag }}
+        </li>
       </ul>
     </div>
   </div>
@@ -27,7 +27,7 @@ import GithubCard from '~/components/GithubCard.vue'
   }
 })
 export default class HomePage extends Vue {
-
+  readonly tags = ['vue', 'nuxt', 'nestjs']
 }
 </script>
 
