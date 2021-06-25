@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-screen-md mx-auto">
+  <div class="max-w-screen-md mx-auto pt-8">
     <Header />
 
     <section>

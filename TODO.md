@@ -1,5 +1,4 @@
 
-* Link to social medias
 * Link to HTML resume
 
 
