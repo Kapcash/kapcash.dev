@@ -1,5 +1,5 @@
 <template>
-  <a href="https://www.buymeacoffee.com/kapcash" class="font-bree px-6 py-4 bg-pink-900 text-2xl text-white rounded-xl">
+  <a href="https://www.buymeacoffee.com/kapcash" class="font-bree px-4 md:px-6 py-2 md:py-4 bg-pink-900 text-xl sm:text-2xl text-white rounded-xl">
     🍺 Buy me a Beer
   </a>
 </template>
