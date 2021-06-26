@@ -10,7 +10,6 @@
  * Released under the MIT License.
  */
 
-
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
 
@@ -34,20 +33,6 @@ PERFORMANCE OF THIS SOFTWARE.
 
 
 /*!
- * vuex v3.6.2
- * (c) 2021 Evan You
- * @license MIT
- */
-
-
-/**
-  * vue-class-component v7.2.6
-  * (c) 2015-present Evan You
-  * @license MIT
-  */
-
-
-/*!
   * vue-router v3.5.1
   * (c) 2021 Evan You
   * @license MIT
@@ -59,6 +44,12 @@ PERFORMANCE OF THIS SOFTWARE.
  * Released under the MIT License.
  */
 
+/*!
+ * vuex v3.6.2
+ * (c) 2021 Evan You
+ * @license MIT
+ */
+
 
 /**
  * Prism: Lightweight, robust, elegant syntax highlighting
@@ -68,10 +59,3 @@ PERFORMANCE OF THIS SOFTWARE.
  * @namespace
  * @public
  */
-
-
-/**
-  * vue-class-component v7.2.6
-  * (c) 2015-present Evan You
-  * @license MIT
-  */
