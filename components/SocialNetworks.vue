@@ -17,15 +17,13 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-import GithubCard from '@/components/GithubCard.vue'
 import TwitterLogo from '@/assets/svg/social-networks/twitter.svg'
 import LinkedInLogo from '@/assets/svg/social-networks/linkedin.svg'
-import GithubLogo from '@/assets/svg/social-networks/Github.svg'
+import GithubLogo from '@/assets/svg/social-networks/github.svg'
 import DevtoLogo from '@/assets/svg/social-networks/devto.svg'
 
 @Component({
   components: {
-    GithubCard,
     TwitterLogo,
     LinkedInLogo,
     GithubLogo,
