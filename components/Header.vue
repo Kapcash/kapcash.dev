@@ -4,7 +4,7 @@
       <img src="~/assets/img/moi.jpg" alt="My smiling face" height="200px" width="200px" class="rounded-full object-cover border-4 border-pink-900">
       <SocialNetworks />
     </div>
-    <div class="flex flex-col flex-wrap px-4 justify-center md:justify-start flex-1">
+    <div class="text-center md:text-left flex flex-col flex-wrap px-4 justify-center md:justify-start flex-1">
       <h1 class="my-3 font-bold text-4xl">
         Hey! I'm Florent!
       </h1>
