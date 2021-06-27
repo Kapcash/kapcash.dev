@@ -33,7 +33,8 @@ export default {
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss',
-    'nuxt-svg-loader'
+    'nuxt-svg-loader',
+    '@nuxtjs/ngrok'
   ],
 
   modules: [
