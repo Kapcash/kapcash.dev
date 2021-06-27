@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-wrap flex-col md:flex-row justify-start items-center md:items-start bg-red-50 rounded">
+  <div class="flex flex-wrap flex-col md:flex-row justify-start items-center md:items-start bg-red-50 rounded p-4">
     <div>
       <img src="~/assets/img/moi.jpg" alt="My smiling face" height="200px" width="200px" class="rounded-full object-cover border-4 border-pink-900">
       <SocialNetworks />
