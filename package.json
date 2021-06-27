@@ -19,6 +19,7 @@
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3",
     "nuxt-svg-loader": "^1.2.0",
+    "particles.vue": "^2.12.2",
     "prismjs": "^1.23.0"
   },
   "devDependencies": {

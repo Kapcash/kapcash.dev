@@ -1,7 +1,8 @@
 <template>
   <div class="flex flex-wrap flex-col md:flex-row justify-start items-center md:items-start bg-red-50 rounded p-4">
     <div>
-      <img src="~/assets/img/moi.jpg" alt="My smiling face" height="200px" width="200px" class="rounded-full object-cover border-4 border-pink-900">
+      <ProfilePicture />
+
       <SocialNetworks />
     </div>
     <div class="text-center md:text-left flex flex-col flex-wrap px-4 justify-center md:justify-start flex-1">
@@ -22,14 +23,25 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
+import maskParticlesOptions from '@/assets/mask_particles'
 
 @Component
 export default class Header extends Vue {
   readonly tags = ['vue', 'nuxt', 'nestjs']
+  particlesOptions = maskParticlesOptions
 }
 </script>
 
 <style lang="postcss" scoped>
+#profilePicture {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  ::v-deep .tsparticles-canvas-el {
+    position: static !important;
+  }
+}
+
 img {
   width: 200px;
   height: 200px;

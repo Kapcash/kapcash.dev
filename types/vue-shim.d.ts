@@ -4,3 +4,5 @@ declare module '*.vue' {
 }
 
 declare const twttr: any
+
+declare module 'particles.vue'
