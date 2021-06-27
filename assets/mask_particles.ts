@@ -81,7 +81,7 @@ const options: ISourceOptions = {
       speed: 0.2
     },
     number: {
-      limit: 100,
+      limit: 120,
       value: 60
     },
     size: {
