@@ -26,6 +26,11 @@
   font-weight: lighter;
 }
 
+@media print {
+  h1, h2, h3, h4, h5 {
+    margin: 0.25rem 0;
+  }
+}
 h1, h2, h3, h4, h5 {
   margin: 0.5rem 0;
 }
@@ -83,7 +88,12 @@ section > h2 {
 body {
   display: grid;
   grid-template-columns: 70% 30%;
-  grid-template-rows: 13% 87%;
+}
+@media only screen and (max-width: 720px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .column {
@@ -94,9 +104,10 @@ body {
 .row {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .row .text-icon + .text-icon {
-  margin-left: 20px;
+  margin-left: 2rem;
 }
 
 span.row {
@@ -114,19 +125,37 @@ main {
   grid-column-start: 1;
   grid-column-end: 1;
   grid-row-start: 2;
-  padding: 0 20px;
+  padding: 0 2rem;
 }
 
 aside {
   grid-column-start: 2;
   grid-row-start: 2;
-  padding-right: 20px;
+  padding-right: 2rem;
 }
 aside section {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
+}
+@media print {
+  aside section {
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 720px) {
+  aside {
+    padding-left: 2rem;
+  }
+  aside section {
+    margin-bottom: 1rem;
+  }
 }
 aside .full-width {
-  margin-right: -20px;
+  margin-right: -2rem;
+}
+@media only screen and (max-width: 720px) {
+  aside .full-width {
+    margin-left: -2rem;
+  }
 }
 
 section p {
@@ -152,26 +181,19 @@ section p {
   font-size: medium;
 }
 .text-icon.medium > img {
-  margin-right: 20px;
+  margin-right: 2rem;
 }
 .text-icon.big {
   font-size: large;
 }
 .text-icon.big > img {
-  margin-right: 20px;
+  margin-right: 2rem;
 }
 
 * {
   box-sizing: border-box;
 }
 
-@media print {
-  body {
-    width: 21cm;
-    height: 29.7cm;
-    margin: 0;
-  }
-}
 html {
   background-color: #3f3f3f;
   font-family: "Roboto", sans-serif;
@@ -180,11 +202,22 @@ html {
 
 body {
   background-color: white;
-  width: 21cm;
-  height: 29.7cm;
-  margin: 0;
-  overflow: scroll;
+  max-width: 26cm;
+  margin: auto;
   color: black;
+}
+@media (min-width: 21cm) {
+  body {
+    aspect-ratio: 1/1.41;
+    overflow: auto;
+  }
+}
+@media print {
+  body {
+    width: 21cm;
+    height: 29.7cm;
+    margin: 0;
+  }
 }
 
 p {
@@ -223,9 +256,17 @@ a[target=_blank]:not(.no-icon):after {
 
 /* Header */
 header {
-  padding: 0 20px;
+  position: relative;
+  flex-basis: 0;
+  padding: 2rem;
   background-color: #09071d;
   justify-content: space-between;
+}
+@media (min-width: 720px) {
+  header {
+    padding: 0 2rem;
+    min-height: 150px;
+  }
 }
 header.line {
   margin: 5px 0;
@@ -239,18 +280,37 @@ header h1 {
 }
 
 #my-face {
+  position: absolute;
+  right: 0;
+  margin-right: 30px;
   height: 100%;
   width: auto;
-  transform: translateY(28px);
+  transform: translateY(20%);
   filter: drop-shadow(0px 0px 1px black);
+}
+@media only screen and (max-width: 720px) {
+  #my-face {
+    display: none;
+  }
+}
+@media print {
+  #my-face {
+    transform: none;
+  }
 }
 
 main section section {
   border: 1px solid transparent;
   border-radius: 6px;
-  padding: 3.3333333333px 10px;
-  margin-right: -10px;
-  margin-left: -10px;
+  padding: 0.3333333333rem 1rem;
+  margin-right: -1rem;
+  margin-left: -1rem;
+}
+@media print {
+  main section section {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 main section section:hover {
   border: 1px dashed #dc254e;
@@ -263,10 +323,23 @@ main section:not(:first-of-type) h2 {
 /* Technos */
 #technos {
   background-color: #bbf5ce;
-  padding-top: 20px;
-  padding-left: 20px;
-  margin-right: -20px;
-  border-radius: 0 0 0 10px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  margin-right: -2rem;
+}
+@media print {
+  #technos {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 0 0 0 10px;
+  }
+}
+@media (min-width: 720px) {
+  #technos {
+    padding-bottom: 0;
+    border-radius: 0 0 0 10px;
+  }
 }
 #technos > * {
   margin-top: 0.5rem;
@@ -301,7 +374,7 @@ main section:not(:first-of-type) h2 {
 .tag {
   border-radius: 5px;
   background-color: #77ff77;
-  padding: 2px 10px;
+  padding: 2px 1rem;
   margin: 0 5px;
   font-size: small;
   display: flex;
