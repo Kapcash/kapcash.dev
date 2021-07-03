@@ -45,10 +45,22 @@
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
 import { Context } from '@nuxt/types'
+import Header from '@/components/Header.vue'
+import GithubCard from '@/components/GithubCard.vue'
+import VSCodeSetup from '@/components/VSCodeSetup.vue'
+import TwitterTimeline from '@/components/TwitterTimeline.vue'
+import SpotifyRecommandation from '@/components/SpotifyRecommandation.vue'
 import { GithubPinnedRepo } from '~/types/github'
 
 @Component({
-  name: 'HomePage'
+  name: 'HomePage',
+  components: {
+    Header,
+    GithubCard,
+    VSCodeSetup,
+    TwitterTimeline,
+    SpotifyRecommandation
+  }
 })
 export default class HomePage extends Vue {
   githubRepos!: GithubPinnedRepo[]

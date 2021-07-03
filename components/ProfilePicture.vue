@@ -7,7 +7,10 @@ import HoverMe from '@/components/HoverMe.vue'
 
 @Component({
   name: 'ProfilePicture',
-  functional: true
+  functional: true,
+  components: {
+    HoverMe
+  }
 } as ComponentOptions<Vue>)
 export default class ProfilePicture extends Vue {
   render (h: CreateElement, { data }: RenderContext) {

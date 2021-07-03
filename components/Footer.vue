@@ -11,9 +11,13 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
+import BuyMeACoffee from '@/components/BuyMeACoffee.vue'
 
 @Component({
-  name: 'Footer'
+  name: 'Footer',
+  components: {
+    BuyMeACoffee
+  }
 })
 export default class Footer extends Vue {
   currentYear = new Date().getFullYear()

@@ -23,10 +23,16 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
+import ProfilePicture from '@/components/ProfilePicture.vue'
+import SocialNetworks from '@/components/SocialNetworks.vue'
 import maskParticlesOptions from '@/assets/mask_particles'
 
 @Component({
-  name: 'Header'
+  name: 'Header',
+  components: {
+    ProfilePicture,
+    SocialNetworks
+  }
 })
 export default class Header extends Vue {
   readonly tags = ['vue', 'nuxt', 'nestjs']

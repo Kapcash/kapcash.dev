@@ -5,6 +5,19 @@
   </div>
 </template>
 
+<script lang="ts">
+import { Vue, Component } from 'nuxt-property-decorator'
+import Footer from '@/components/Footer.vue'
+
+@Component({
+  name: 'DefaultLayout',
+  components: {
+    Footer
+  }
+})
+export default class DefaultLayout extends Vue {}
+</script>
+
 <style>
 html {
   font-family:

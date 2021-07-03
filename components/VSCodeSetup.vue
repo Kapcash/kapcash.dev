@@ -7,9 +7,6 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
 import Prism from 'prismjs'
-import GithubProjectLogo from '@/assets/svg/github-project.svg'
-import GithubStarLogo from '@/assets/svg/github-star.svg'
-import GithubForkLogo from '@/assets/svg/github-fork.svg'
 
 // TODO Update code block theme to light if outside
 
@@ -27,12 +24,7 @@ const setupAsCode =
 `
 
 @Component({
-  name: 'VSCodeSetup',
-  components: {
-    GithubProjectLogo,
-    GithubStarLogo,
-    GithubForkLogo
-  }
+  name: 'VSCodeSetup'
 })
 export default class VSCodeSetup extends Vue {
   get useDark (): boolean {
