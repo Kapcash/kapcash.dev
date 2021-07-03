@@ -1,12 +1,13 @@
 import { mount } from '@vue/test-utils'
 import Header from '~/components/Header.vue'
+import ProfilePicture from '~/components/ProfilePicture.vue'
 
 describe('Header.vue', () => {
-  it('should include photo', () => {
+  it('should include ProfilePicture component', () => {
     const wrapper = mount(Header)
 
-    const img = wrapper.find('img')
-    expect(img.attributes('src')).toContain('assets/img/moi.jpg')
+    const profilePicture = wrapper.findComponent(ProfilePicture)
+    expect(profilePicture.exists()).toBeTruthy()
   })
 
   it('should include at least three tags', () => {

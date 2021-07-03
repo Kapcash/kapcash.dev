@@ -47,7 +47,9 @@ import { Vue, Component } from 'nuxt-property-decorator'
 import { Context } from '@nuxt/types'
 import { GithubPinnedRepo } from '~/types/github'
 
-@Component
+@Component({
+  name: 'HomePage'
+})
 export default class HomePage extends Vue {
   githubRepos!: GithubPinnedRepo[]
 

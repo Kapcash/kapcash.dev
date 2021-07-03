@@ -23,6 +23,7 @@ import GithubLogo from '@/assets/svg/social-networks/github.svg'
 import DevtoLogo from '@/assets/svg/social-networks/devto.svg'
 
 @Component({
+  name: 'SocialNetworks',
   components: {
     TwitterLogo,
     LinkedInLogo,

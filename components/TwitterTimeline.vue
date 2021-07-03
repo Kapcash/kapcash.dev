@@ -9,6 +9,7 @@ import { Vue, Component } from 'nuxt-property-decorator'
 import GithubCard from '~/components/GithubCard.vue'
 
 @Component({
+  name: 'TwitterTimeline',
   components: {
     GithubCard
   }

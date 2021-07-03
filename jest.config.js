@@ -18,7 +18,10 @@ module.exports = {
     '.*\\.(vue)$': 'vue-jest',
     '.+\\.(png|svg|jpg)$': '<rootDir>/test/svgTransformer.js'
   },
-  collectCoverage: true,
+  transformIgnorePatterns: [
+    '/node_modules/particles.vue$'
+  ],
+  collectCoverage: false,
   collectCoverageFrom: [
     '<rootDir>/components/**/*.vue',
     '<rootDir>/pages/**/*.vue'

@@ -8,8 +8,10 @@
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import { MetaInfo } from 'vue-meta'
 
-@Component
-export default class Footer extends Vue {
+@Component({
+  name: 'BuyMeACoffee'
+})
+export default class BuyMeACoffee extends Vue {
   @Prop({ type: String, default: '#FFDD00' })
   readonly color!: string
 

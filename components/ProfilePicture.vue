@@ -6,9 +6,10 @@ import maskParticlesOptions from '@/assets/mask_particles'
 import HoverMe from '@/components/HoverMe.vue'
 
 @Component({
+  name: 'ProfilePicture',
   functional: true
 } as ComponentOptions<Vue>)
-export default class Header extends Vue {
+export default class ProfilePicture extends Vue {
   render (h: CreateElement, { data }: RenderContext) {
     const commonAttributes: VNodeData = {
       attrs: {

@@ -27,6 +27,7 @@ const setupAsCode =
 `
 
 @Component({
+  name: 'VSCodeSetup',
   components: {
     GithubProjectLogo,
     GithubStarLogo,

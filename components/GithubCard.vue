@@ -37,6 +37,7 @@ import GithubStarLogo from '@/assets/svg/github-star.svg'
 import GithubForkLogo from '@/assets/svg/github-fork.svg'
 
 @Component({
+  name: 'GithubCard',
   components: {
     GithubProjectLogo,
     GithubStarLogo,
