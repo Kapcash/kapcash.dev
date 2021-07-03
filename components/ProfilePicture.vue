@@ -1,20 +1,20 @@
 <script lang="ts">
-import { ComponentOptions, CreateElement, VNodeData } from 'vue'
-import { Context } from '@nuxt/types'
+import { ComponentOptions, CreateElement, VNodeData, RenderContext } from 'vue'
 import { Vue, Component } from 'nuxt-property-decorator'
 import { ParticlesComponent } from 'particles.vue'
 import maskParticlesOptions from '@/assets/mask_particles'
+import HoverMe from '@/components/HoverMe.vue'
 
 @Component({
   functional: true
 } as ComponentOptions<Vue>)
 export default class Header extends Vue {
-  render (h: CreateElement, _ctx: Context) {
+  render (h: CreateElement, { data }: RenderContext) {
     const commonAttributes: VNodeData = {
       attrs: {
         id: 'profilePicture'
       },
-      staticClass: 'rounded-full object-cover border-4 border-pink-900'
+      staticClass: 'rounded-full object-cover border-4 border-pink-900 ' + data.staticClass
     }
 
     const mediaQuery = process.client && window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -22,7 +22,12 @@ export default class Header extends Vue {
     if (reduceMotion) {
       return h('img', { ...commonAttributes, attrs: { src: '/moi.jpg', alt: 'My smiling face' } })
     } else {
-      return h(ParticlesComponent, { ...commonAttributes, props: { id: 'profilePicture', options: maskParticlesOptions } })
+      return h('div', {
+        staticClass: 'relative pb-8 text-pink-900'
+      }, [
+        h(HoverMe),
+        h(ParticlesComponent, { ...commonAttributes, props: { id: 'profilePicture', options: maskParticlesOptions } })
+      ])
     }
   }
 }
@@ -35,6 +40,10 @@ export default class Header extends Vue {
   overflow: hidden;
   ::v-deep .tsparticles-canvas-el {
     position: static !important;
+  }
+  transition: border-color 200ms ease-out;
+  &:hover {
+    border-color: rgb(210 7 87);
   }
 }
 

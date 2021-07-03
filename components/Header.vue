@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-wrap flex-col md:flex-row justify-start items-center md:items-start bg-red-50 rounded p-4">
     <div>
-      <ProfilePicture />
+      <ProfilePicture class="relative" />
 
       <SocialNetworks />
     </div>
@@ -25,7 +25,9 @@
 import { Vue, Component } from 'nuxt-property-decorator'
 import maskParticlesOptions from '@/assets/mask_particles'
 
-@Component
+@Component({
+  name: 'Header'
+})
 export default class Header extends Vue {
   readonly tags = ['vue', 'nuxt', 'nestjs']
   particlesOptions = maskParticlesOptions
