@@ -1,28 +1,30 @@
 <template>
-  <div class="flex flex-wrap flex-col md:flex-row justify-start items-center md:items-start bg-red-50 rounded p-4">
+  <div class="flex flex-wrap flex-col md:flex-row justify-start items-center md:items-stretch bg-red-50 rounded p-4 -m-3">
     <div>
       <ProfilePicture class="relative" :particles="useParticles" />
 
       <SocialNetworks />
     </div>
-    <div class="text-center md:text-left flex flex-col flex-wrap px-4 justify-center md:justify-start flex-1">
-      <h1 class="my-3 font-bold text-4xl">
-        Hey! I'm Florent!
-      </h1>
-      <p class="my-3 tracking-widest text-3xl">
-        I am a French web developer based in Barcelona contributing to open source libraries.
-      </p>
-      <div class="flex justify-between items-center">
-        <ul class="my-3">
-          <li v-for="tag of tags" :key="tag" class="tag">
-            #{{ tag }}
-          </li>
-        </ul>
-        <a class="text-center md:text-right" href="/resume/">
-          <button class="px-6 py-2 bg-pink-900 hover:bg-pink-800 text-red-50 rounded-lg">
-            See my resume
-          </button>
-        </a>
+    <div class="text-center md:text-left flex flex-col flex-wrap px-4 flex-1 justify-center md:justify-start">
+      <div class="flex flex-col h-full justify-center md:justify-between">
+        <h1 class="my-3 font-bold text-4xl">
+          Hey! I'm Florent!
+        </h1>
+        <p class="my-3 tracking-widest text-3xl">
+          I am a French web developer based in Barcelona contributing to open source libraries.
+        </p>
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <ul class="my-3">
+            <li v-for="tag of tags" :key="tag" class="tag">
+              #{{ tag }}
+            </li>
+          </ul>
+          <a class="text-center md:text-right" href="/resume/">
+            <button class="px-6 py-2 bg-pink-900 hover:bg-pink-800 text-red-50 rounded">
+              See my resume
+            </button>
+          </a>
+        </div>
       </div>
     </div>
   </div>
