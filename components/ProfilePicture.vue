@@ -1,6 +1,6 @@
 <script lang="ts">
 import { ComponentOptions, CreateElement, VNodeData, RenderContext } from 'vue'
-import { Vue, Component } from 'nuxt-property-decorator'
+import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import { ParticlesComponent } from 'particles.vue'
 import maskParticlesOptions from '@/assets/mask_particles'
 import HoverMe from '@/components/HoverMe.vue'
@@ -13,7 +13,10 @@ import HoverMe from '@/components/HoverMe.vue'
   }
 } as ComponentOptions<Vue>)
 export default class ProfilePicture extends Vue {
-  render (h: CreateElement, { data }: RenderContext) {
+  @Prop({ type: Boolean, default: false })
+  readonly particles!: boolean
+
+  render (h: CreateElement, { data, props }: RenderContext) {
     const commonAttributes: VNodeData = {
       attrs: {
         id: 'profilePicture'
@@ -23,15 +26,15 @@ export default class ProfilePicture extends Vue {
 
     const mediaQuery = process.client && window.matchMedia('(prefers-reduced-motion: reduce)')
     const reduceMotion = mediaQuery && mediaQuery.matches
-    if (reduceMotion) {
-      return h('img', { ...commonAttributes, attrs: { src: '/moi.jpg', alt: 'My smiling face' } })
-    } else {
+    if (props.particles && !reduceMotion) {
       return h('div', {
         staticClass: 'relative pb-8 text-pink-900'
       }, [
         h(HoverMe),
         h(ParticlesComponent, { ...commonAttributes, props: { id: 'profilePicture', options: maskParticlesOptions } })
       ])
+    } else {
+      return h('img', { ...commonAttributes, attrs: { src: '/moi.jpg', alt: 'My smiling face' } })
     }
   }
 }

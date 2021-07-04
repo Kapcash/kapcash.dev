@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-wrap flex-col md:flex-row justify-start items-center md:items-start bg-red-50 rounded p-4">
     <div>
-      <ProfilePicture class="relative" />
+      <ProfilePicture class="relative" :particles="useParticles" />
 
       <SocialNetworks />
     </div>
@@ -12,16 +12,18 @@
       <p class="my-3 tracking-widest text-3xl">
         I am a French web developer based in Barcelona contributing to open source libraries.
       </p>
-      <ul class="my-3">
-        <li v-for="tag of tags" :key="tag" class="tag">
-          #{{ tag }}
-        </li>
-      </ul>
-      <a class="text-right" href="/resume/">
-        <button class="px-6 py-2 bg-pink-900 hover:bg-pink-800 text-red-50 rounded-lg">
-          See my resume
-        </button>
-      </a>
+      <div class="flex justify-between items-center">
+        <ul class="my-3">
+          <li v-for="tag of tags" :key="tag" class="tag">
+            #{{ tag }}
+          </li>
+        </ul>
+        <a class="text-center md:text-right" href="/resume/">
+          <button class="px-6 py-2 bg-pink-900 hover:bg-pink-800 text-red-50 rounded-lg">
+            See my resume
+          </button>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -30,7 +32,6 @@
 import { Vue, Component } from 'nuxt-property-decorator'
 import ProfilePicture from '@/components/ProfilePicture.vue'
 import SocialNetworks from '@/components/SocialNetworks.vue'
-import maskParticlesOptions from '@/assets/mask_particles'
 
 @Component({
   name: 'Header',
@@ -41,7 +42,12 @@ import maskParticlesOptions from '@/assets/mask_particles'
 })
 export default class Header extends Vue {
   readonly tags = ['vue', 'nuxt', 'nestjs']
-  particlesOptions = maskParticlesOptions
+  useParticles: boolean = false
+
+  mounted () {
+    const isTouchScreen = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)
+    this.useParticles = !isTouchScreen
+  }
 }
 </script>
 
