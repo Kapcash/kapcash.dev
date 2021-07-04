@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-wrap flex-col md:flex-row justify-start items-center md:items-stretch bg-red-50 rounded p-4 -m-3">
+  <div class="flex flex-wrap flex-col md:flex-row justify-start items-center md:items-stretch bg-red-50 rounded p-4 -m-3 md:m-0">
     <div>
       <ProfilePicture class="relative" :particles="useParticles" />
 
@@ -10,7 +10,7 @@
         <h1 class="my-3 font-bold text-4xl">
           Hey! I'm Florent!
         </h1>
-        <p class="my-3 tracking-widest text-3xl">
+        <p class="my-3 tracking-widest text-2xl">
           I am a French web developer based in Barcelona contributing to open source libraries.
         </p>
         <div class="flex flex-col md:flex-row justify-between items-center">

@@ -1,6 +1,6 @@
 <template>
   <div class="max-w-screen-md mx-auto md:pt-8">
-    <Header />
+    <Header class="md:border-2 md:border-white" />
 
     <section>
       <h1 class="text-4xl mt-10 mb-6">

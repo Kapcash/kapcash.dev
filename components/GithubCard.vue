@@ -1,5 +1,5 @@
 <template>
-  <a class="github-card flex flex-col pa-3 border border-grey-400 rounded-md p-5 my-3" :href="link">
+  <a class="github-card bg-white p-5 my-3 border border-grey-400 rounded-md flex flex-col " :href="link">
     <div class="flex w-full items-center justify-start">
       <GithubProjectLogo class="mr-3 text-gray-500 fill-current" />
       <span class="repo-title text-bold flex-auto min-width-0 text-blue-800">

@@ -1,5 +1,5 @@
 <template>
-  <div class="px-3 md:px-0">
+  <div class="background-gradient px-3 md:px-0">
     <Nuxt />
     <Footer />
   </div>
@@ -43,5 +43,12 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+@media screen and (min-width: 780px) {
+  .background-gradient {
+    background-color: white;
+    background: linear-gradient(279deg,#ffffff  75%, #fef1f2 0%);
+  }
 }
 </style>
