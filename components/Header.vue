@@ -19,7 +19,7 @@
               #{{ tag }}
             </li>
           </ul>
-          <a class="text-center md:text-right" href="/resume/">
+          <a class="text-center md:text-right" href="resume/">
             <button class="px-6 py-2 bg-pink-900 hover:bg-pink-800 text-red-50 rounded">
               See my resume
             </button>
