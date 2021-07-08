@@ -1,7 +1,7 @@
 <template>
   <div class="background-gradient px-3 md:px-0">
     <Nuxt />
-    <Footer />
+    <Footer class="mix-blend-multiply" />
   </div>
 </template>
 
