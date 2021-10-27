@@ -1,6 +1,7 @@
-import { NuxtConfig } from '@nuxt/types'
+import { defineNuxtConfig } from '@nuxt/bridge'
+import { extendWebpackConfig } from '@nuxt/kit'
 
-export default {
+export default defineNuxtConfig({
   target: 'static',
 
   head: {
@@ -31,7 +32,6 @@ export default {
   components: false,
 
   buildModules: [
-    '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss',
     'nuxt-svg-loader',
     '@nuxtjs/ngrok'
@@ -43,9 +43,11 @@ export default {
 
   build: {
     postcss: {
-      plugins: {
-        'postcss-nested': {},
-        'postcss-simple-vars': {}
+      postcssOptions: {
+        plugins: {
+          'postcss-nested': {},
+          'postcss-simple-vars': {}
+        }
       }
     },
     babel: {
@@ -56,25 +58,24 @@ export default {
           css: false
         }]
       ]
-    },
-    extend (config, ctx) {
-      if (ctx.isDev) {
-        // For debugging purposes
-        config.devtool = ctx.isClient ? 'eval-source-map' : 'inline-source-map'
-      }
-
-      if (ctx.isClient) {
-        const bringUpVueTsSourceFilesForDebug = (info: any) => {
-          let $filename = 'sources://' + info.resourcePath
-          if (info.resourcePath.endsWith('.vue') && !info.query.includes('type=script')) {
-            $filename = 'webpack-generated:///' + info.resourcePath + '?' + info.hash
-          }
-          return $filename
-        }
-        if (!config.output) { config.output = {} }
-        config.output.devtoolModuleFilenameTemplate = bringUpVueTsSourceFilesForDebug
-        config.output.devtoolFallbackModuleFilenameTemplate = 'webpack:///[resource-path]?[hash]'
-      }
     }
   }
-} as NuxtConfig
+})
+
+extendWebpackConfig((config) => {
+  if (config.mode === 'development') {
+    // For debugging purposes
+    // config.devtool = config.client ? 'eval-source-map' : 'inline-source-map'
+  }
+
+  const bringUpVueTsSourceFilesForDebug = (info: any) => {
+    let $filename = 'sources://' + info.resourcePath
+    if (info.resourcePath.endsWith('.vue') && !info.query.includes('type=script')) {
+      $filename = 'webpack-generated:///' + info.resourcePath + '?' + info.hash
+    }
+    return $filename
+  }
+  if (!config.output) { config.output = {} }
+  config.output.devtoolModuleFilenameTemplate = bringUpVueTsSourceFilesForDebug
+  config.output.devtoolFallbackModuleFilenameTemplate = 'webpack:///[resource-path]?[hash]'
+})
