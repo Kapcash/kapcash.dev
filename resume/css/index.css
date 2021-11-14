@@ -356,12 +356,15 @@ main section:not(:first-of-type) h2 {
 
 #links a {
   margin: 0.25rem 2px;
+  color: #141421;
 }
 #links a .fab, #links a .fas {
   float: left;
-  color: #141421;
   font-size: 32px;
   margin: 0 0.25rem;
+}
+#links a:hover {
+  color: #0020af;
 }
 
 #referees i {
