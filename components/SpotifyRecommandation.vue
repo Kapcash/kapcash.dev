@@ -23,5 +23,5 @@ export default class SpotifyRecommandation extends Vue {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
 </style>

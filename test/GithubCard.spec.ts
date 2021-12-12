@@ -65,7 +65,7 @@ describe('GithubCard.vue', () => {
     const forksElt = extraSpans.at(2)
 
     expect(languageElt).toBeDefined()
-    expect(languageElt.find('i.badge').element.style.backgroundColor).toEqual(hexToRGB(languageColor))
+    expect((languageElt.find('i.badge').element as HTMLElement).style.backgroundColor).toEqual(hexToRGB(languageColor))
     expect(starsElt).toBeDefined()
     expect(starsElt.text()).toEqual(nbStars.toString())
     expect(forksElt).toBeDefined()

@@ -89,13 +89,9 @@ export default class HomePage extends Vue {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
 img {
   width: 200px;
   height: 200px;
-}
-
-.tag {
-  @apply inline text-pink-800 text-xl font-semibold mr-4;
 }
 </style>

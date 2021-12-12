@@ -40,7 +40,7 @@ export default class ProfilePicture extends Vue {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
 #profilePicture {
   width: 200px;
   height: 200px;

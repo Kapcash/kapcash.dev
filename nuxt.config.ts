@@ -1,4 +1,5 @@
 import { NuxtConfig } from '@nuxt/types'
+import { shortcuts } from './assets/css/shortcuts'
 
 export default {
   target: 'static',
@@ -19,10 +20,20 @@ export default {
   },
 
   css: [
+    '~/assets/css/main.css',
   ],
 
   tailwindcss: {
     cssPath: '~/assets/tailwind.css',
+  },
+
+  unocss: {
+    uno: true,
+    icons: false,
+    attributify: false,
+
+    shortcuts,
+    rules: [],
   },
 
   plugins: [
@@ -31,10 +42,10 @@ export default {
   components: false,
 
   buildModules: [
+    '@unocss/nuxt',
     '@nuxt/typescript-build',
-    '@nuxtjs/tailwindcss',
-    'nuxt-svg-loader',
     '@nuxtjs/ngrok',
+    'nuxt-svg-loader',
   ],
 
   modules: [
@@ -42,12 +53,6 @@ export default {
   ],
 
   build: {
-    postcss: {
-      plugins: {
-        'postcss-nested': {},
-        'postcss-simple-vars': {},
-      },
-    },
     babel: {
       plugins: [
         ['prismjs', {

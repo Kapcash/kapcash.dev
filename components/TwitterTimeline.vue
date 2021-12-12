@@ -27,7 +27,7 @@ export default class TwitterTimeline extends Vue {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
 .timeline-wrapper {
   max-height: 500px;
   overflow: auto;

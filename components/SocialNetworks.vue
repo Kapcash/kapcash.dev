@@ -34,7 +34,7 @@ import DevtoLogo from '@/assets/svg/social-networks/devto.svg'
 export default class SocialNetworks extends Vue {}
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
 .social-networks > * {
   margin-left: 8px;
   margin-right: 8px;

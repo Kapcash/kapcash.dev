@@ -38,5 +38,5 @@ export default class VSCodeSetup extends Vue {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
 </style>

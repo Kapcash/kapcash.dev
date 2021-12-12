@@ -68,9 +68,17 @@ export default class GithubCard extends Vue {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
 .github-card:hover {
   border: 1px solid #b7a6ad;
   cursor: pointer;
+}
+
+.badge {
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: text-bottom;
+  height: 1em;
+  width: 1em;
 }
 </style>

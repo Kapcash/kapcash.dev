@@ -47,20 +47,20 @@ export default class Header extends Vue {
   useParticles: boolean = false
 
   mounted () {
-    const isTouchScreen = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)
+    const isTouchScreen = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.maxTouchPoints > 0)
     this.useParticles = !isTouchScreen
   }
 }
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
 #profilePicture {
   width: 200px;
   height: 200px;
   overflow: hidden;
-  ::v-deep .tsparticles-canvas-el {
-    position: static !important;
-  }
+}
+#profilePicture::v-deep .tsparticles-canvas-el {
+  position: static !important;
 }
 
 img {
@@ -70,9 +70,5 @@ img {
 
 .flex-1 {
   flex: 1;
-}
-
-.tag {
-  @apply inline text-pink-800 text-xl font-semibold mr-4;
 }
 </style>
