@@ -9,8 +9,8 @@ import HoverMe from '@/components/HoverMe.vue'
   name: 'ProfilePicture',
   functional: true,
   components: {
-    HoverMe
-  }
+    HoverMe,
+  },
 } as ComponentOptions<Vue>)
 export default class ProfilePicture extends Vue {
   @Prop({ type: Boolean, default: false })
@@ -19,19 +19,19 @@ export default class ProfilePicture extends Vue {
   render (h: CreateElement, { data, props }: RenderContext) {
     const commonAttributes: VNodeData = {
       attrs: {
-        id: 'profilePicture'
+        id: 'profilePicture',
       },
-      staticClass: 'rounded-full object-cover border-4 border-pink-900 ' + data.staticClass
+      staticClass: 'rounded-full object-cover border-4 border-pink-900 ' + data.staticClass,
     }
 
     const mediaQuery = process.client && window.matchMedia('(prefers-reduced-motion: reduce)')
     const reduceMotion = mediaQuery && mediaQuery.matches
     if (props.particles && !reduceMotion) {
       return h('div', {
-        staticClass: 'relative pb-8 text-pink-900'
+        staticClass: 'relative pb-8 text-pink-900',
       }, [
         h(HoverMe),
-        h(ParticlesComponent, { ...commonAttributes, props: { id: 'profilePicture', options: maskParticlesOptions } })
+        h(ParticlesComponent, { ...commonAttributes, props: { id: 'profilePicture', options: maskParticlesOptions } }),
       ])
     } else {
       return h('img', { ...commonAttributes, attrs: { src: '/moi.jpg', alt: 'My smiling face' } })

@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
+import { hexToRGB } from './helpers'
 import GithubCard from '~/components/GithubCard.vue'
-import { hexToRGB } from './helpers';
 
 describe('GithubCard.vue', () => {
   it('should include all required props elements', () => {
@@ -12,8 +12,8 @@ describe('GithubCard.vue', () => {
       propsData: {
         title,
         description,
-        link
-      }
+        link,
+      },
     })
 
     const anchor = wrapper.find('a.github-card')
@@ -46,8 +46,8 @@ describe('GithubCard.vue', () => {
         mainLanguage,
         nbStars,
         nbForks,
-        languageColor
-      }
+        languageColor,
+      },
     })
 
     const anchor = wrapper.find('a.github-card')

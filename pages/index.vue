@@ -59,8 +59,8 @@ import { GithubPinnedRepo } from '~/types/github'
     GithubCard,
     VSCodeSetup,
     TwitterTimeline,
-    SpotifyRecommandation
-  }
+    SpotifyRecommandation,
+  },
 })
 export default class HomePage extends Vue {
   githubRepos!: GithubPinnedRepo[]
@@ -68,22 +68,22 @@ export default class HomePage extends Vue {
   async asyncData ({ $axios }: Context) {
     const githubRepos = await $axios.$get<GithubPinnedRepo[]>('https://gh-pinned-repos.egoist.sh/?username=Kapcash', {
       headers: {
-        Accept: 'application/vnd.github.v3+json'
+        Accept: 'application/vnd.github.v3+json',
       },
       params: {
         sort: 'updated',
         per_page: 3,
-        type: 'owner'
-      }
+        type: 'owner',
+      },
     }).then(res => res.map(repo => ({
       ...repo,
       stars: parseInt(repo.stars as string),
       forks: parseInt(repo.forks as string),
-      link: `https://github.com/${repo.owner}/${repo.repo}`
+      link: `https://github.com/${repo.owner}/${repo.repo}`,
     })))
 
     return {
-      githubRepos
+      githubRepos,
     }
   }
 }

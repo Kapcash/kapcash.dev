@@ -39,8 +39,8 @@ import SocialNetworks from '@/components/SocialNetworks.vue'
   name: 'Header',
   components: {
     ProfilePicture,
-    SocialNetworks
-  }
+    SocialNetworks,
+  },
 })
 export default class Header extends Vue {
   readonly tags = ['vue', 'nuxt', 'nestjs']

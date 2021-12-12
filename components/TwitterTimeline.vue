@@ -11,17 +11,17 @@ import GithubCard from '~/components/GithubCard.vue'
 @Component({
   name: 'TwitterTimeline',
   components: {
-    GithubCard
-  }
+    GithubCard,
+  },
 })
 export default class TwitterTimeline extends Vue {
   head () {
     return {
       script: [
         {
-          src: 'https://platform.twitter.com/widgets.js'
-        }
-      ]
+          src: 'https://platform.twitter.com/widgets.js',
+        },
+      ],
     }
   }
 }

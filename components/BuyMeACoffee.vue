@@ -9,7 +9,7 @@ import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import { MetaInfo } from 'vue-meta'
 
 @Component({
-  name: 'BuyMeACoffee'
+  name: 'BuyMeACoffee',
 })
 export default class BuyMeACoffee extends Vue {
   @Prop({ type: String, default: '#FFDD00' })
@@ -18,8 +18,8 @@ export default class BuyMeACoffee extends Vue {
   head (): MetaInfo {
     return {
       link: [
-        { hid: 'bree-font', href: 'https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap', rel: 'stylesheet' }
-      ]
+        { hid: 'bree-font', href: 'https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap', rel: 'stylesheet' },
+      ],
     }
   }
 }

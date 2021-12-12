@@ -12,8 +12,8 @@ import Footer from '@/components/Footer.vue'
 @Component({
   name: 'DefaultLayout',
   components: {
-    Footer
-  }
+    Footer,
+  },
 })
 export default class DefaultLayout extends Vue {}
 </script>

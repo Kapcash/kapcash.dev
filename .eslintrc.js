@@ -2,19 +2,20 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
+    node: true,
   },
   extends: [
     '@nuxtjs/eslint-config-typescript',
-    'plugin:nuxt/recommended'
+    'plugin:nuxt/recommended',
   ],
   globals: {
-    twttr: 'readonly'
+    twttr: 'readonly',
   },
   plugins: [
   ],
   // add your custom rules here
   rules: {
-    camelcase: 'off'
-  }
+    camelcase: 'off',
+    'comma-dangle': ['error', 'always-multiline'],
+  },
 }

@@ -17,7 +17,7 @@ import { Vue, Component } from 'vue-property-decorator'
 // TODO: Add switch button to show recommendation / work playlist
 
 @Component({
-  name: 'SpotifyRecommandation'
+  name: 'SpotifyRecommandation',
 })
 export default class SpotifyRecommandation extends Vue {
 }

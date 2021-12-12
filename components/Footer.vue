@@ -16,8 +16,8 @@ import BuyMeACoffee from '@/components/BuyMeACoffee.vue'
 @Component({
   name: 'Footer',
   components: {
-    BuyMeACoffee
-  }
+    BuyMeACoffee,
+  },
 })
 export default class Footer extends Vue {
   currentYear = new Date().getFullYear()

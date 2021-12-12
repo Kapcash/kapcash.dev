@@ -28,8 +28,8 @@ import DevtoLogo from '@/assets/svg/social-networks/devto.svg'
     TwitterLogo,
     LinkedInLogo,
     GithubLogo,
-    DevtoLogo
-  }
+    DevtoLogo,
+  },
 })
 export default class SocialNetworks extends Vue {}
 </script>

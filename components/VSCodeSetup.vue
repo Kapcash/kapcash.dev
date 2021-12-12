@@ -24,7 +24,7 @@ const setupAsCode =
 `
 
 @Component({
-  name: 'VSCodeSetup'
+  name: 'VSCodeSetup',
 })
 export default class VSCodeSetup extends Vue {
   get useDark (): boolean {

@@ -6,23 +6,23 @@ export default {
   head: {
     title: "Florent Catiau-Tristant's website",
     htmlAttrs: {
-      lang: 'en'
+      lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: '' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: 'https://fav.farm/💻' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: 'https://fav.farm/💻' },
+    ],
   },
 
   css: [
   ],
 
   tailwindcss: {
-    cssPath: '~/assets/tailwind.css'
+    cssPath: '~/assets/tailwind.css',
   },
 
   plugins: [
@@ -34,28 +34,28 @@ export default {
     '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss',
     'nuxt-svg-loader',
-    '@nuxtjs/ngrok'
+    '@nuxtjs/ngrok',
   ],
 
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
   ],
 
   build: {
     postcss: {
       plugins: {
         'postcss-nested': {},
-        'postcss-simple-vars': {}
-      }
+        'postcss-simple-vars': {},
+      },
     },
     babel: {
       plugins: [
         ['prismjs', {
           languages: ['typescript'],
           plugins: [],
-          css: false
-        }]
-      ]
+          css: false,
+        }],
+      ],
     },
     extend (config, ctx) {
       if (ctx.isDev) {
@@ -75,6 +75,6 @@ export default {
         config.output.devtoolModuleFilenameTemplate = bringUpVueTsSourceFilesForDebug
         config.output.devtoolFallbackModuleFilenameTemplate = 'webpack:///[resource-path]?[hash]'
       }
-    }
-  }
+    },
+  },
 } as NuxtConfig

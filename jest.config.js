@@ -4,26 +4,26 @@ module.exports = {
     '^~/(.*\\.svg)\\?inline$': '<rootDir>/$1',
     '^@/(.*)$': '<rootDir>/$1',
     '^~/(.*)$': '<rootDir>/$1',
-    '^vue$': 'vue/dist/vue.common.js'
+    '^vue$': 'vue/dist/vue.common.js',
   },
   moduleFileExtensions: [
     'ts',
     'js',
     'vue',
-    'json'
+    'json',
   ],
   transform: {
     '^.+\\.ts$': 'ts-jest',
     '^.+\\.js$': 'babel-jest',
     '.*\\.(vue)$': 'vue-jest',
-    '.+\\.(png|svg|jpg)$': '<rootDir>/test/svgTransformer.js'
+    '.+\\.(png|svg|jpg)$': '<rootDir>/test/svgTransformer.js',
   },
   transformIgnorePatterns: [
-    '/node_modules/particles.vue$'
+    '/node_modules/particles.vue$',
   ],
   collectCoverage: false,
   collectCoverageFrom: [
     '<rootDir>/components/**/*.vue',
-    '<rootDir>/pages/**/*.vue'
-  ]
+    '<rootDir>/pages/**/*.vue',
+  ],
 }

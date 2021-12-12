@@ -41,8 +41,8 @@ import GithubForkLogo from '@/assets/svg/github-fork.svg'
   components: {
     GithubProjectLogo,
     GithubStarLogo,
-    GithubForkLogo
-  }
+    GithubForkLogo,
+  },
 })
 export default class GithubCard extends Vue {
   @Prop({ type: String, required: true })

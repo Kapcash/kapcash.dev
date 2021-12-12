@@ -21,7 +21,7 @@
 import { Vue, Component } from 'nuxt-property-decorator'
 
 @Component({
-  name: 'HoverMe'
+  name: 'HoverMe',
 })
 export default class HoverMe extends Vue {
   head () {
@@ -29,8 +29,8 @@ export default class HoverMe extends Vue {
       link: [
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
-        { href: 'https://fonts.googleapis.com/css2?family=Yomogi&display=swap', rel: 'stylesheet' }
-      ]
+        { href: 'https://fonts.googleapis.com/css2?family=Yomogi&display=swap', rel: 'stylesheet' },
+      ],
     }
   }
 }
