@@ -1,0 +1,164 @@
+$gh-default-text: #24292e;
+$gh-background: #f5f8fa;
+$gh-comment: #6A737D;
+$gh-function: #6F42C1;
+$gh-keyword: #D73A49;
+$gh-punctuation: #B31D28;
+$gh-deleted: #FF6347;
+$gh-class: #22863A;
+$gh-variable: #E36209;
+$gh-constant: #005CC5;
+$gh-boolean: $gh-constant;
+$gh-number: #D19A66;
+$gh-string: #032F62;
+$gh-operator: $gh-default-text;
+$gh-url: #96CBFE;
+$gh-regex: $gh-string;
+$gh-important: #fd971f;
+$gh-attr: $gh-number;
+
+.light {
+  code[class*="language-"],
+  pre[class*="language-"]& {
+    color: $gh-default-text;
+    font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  /* Code blocks */
+  pre[class*="language-"]& {
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+  }
+
+  &:not(pre) > code[class*="language-"],
+  pre[class*="language-"]& {
+    background: $gh-background;
+  }
+
+  /* Inline code */
+  &:not(pre) > code[class*="language-"] {
+    padding: .1em;
+    border-radius: .3em;
+  }
+
+  .token {
+    &.comment,
+    &.prolog,
+    &.doctype,
+    &.cdata {
+      color: $gh-comment;
+    }
+
+    &.comment {
+      font-style: italic;
+    }
+
+    &.punctuation {
+      color: $gh-punctuation;
+    }
+
+    .namespace {
+      opacity: .7;
+    }
+
+    &.property,
+    &.keyword,
+    &.tag {
+      color: $gh-keyword;
+    }
+
+    &.class-name {
+      color: $gh-class;
+      text-decoration: underline;
+    }
+
+    &.boolean {
+      color: $gh-boolean;
+    }
+    &.constant {
+      color: $gh-constant;
+    }
+
+    &.symbol,
+    &.deleted {
+      color: $gh-deleted;
+    }
+
+    &.number {
+      color: $gh-number;
+    }
+
+    &.selector,
+    &.attr-name,
+    &.string,
+    &.char,
+    &.builtin,
+    &.inserted {
+      color: $gh-string;
+    }
+
+    &.variable {
+      color: $gh-variable;
+    }
+
+    &.operator {
+      color: $gh-operator;
+    }
+
+    &.entity {
+      color: #FFFFB6;
+      cursor: help;
+    }
+
+    &.url {
+      color: $gh-url;
+    }
+
+    .language-css &.string,
+    .style &.string {
+      color: #87C38A;
+    }
+
+    &.atrule,
+    &.attr-value {
+      color: $gh-attr;
+    }
+
+    &.function {
+      color: $gh-function;
+    }
+
+    &.regex {
+      color: $gh-regex;
+    }
+
+    &.important {
+      color: $gh-important;
+    }
+
+    &.important,
+    &.bold {
+      font-weight: bold;
+    }
+
+    &.italic {
+      font-style: italic;
+    }
+  }
+}
