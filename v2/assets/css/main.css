@@ -36,3 +36,6 @@ h5 {
   margin-bottom: 4px;
 }
 
+.tag::before {
+  content: '#'
+}

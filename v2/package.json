@@ -8,6 +8,13 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "3.0.0"
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "@unocss/nuxt": "^0.47.5",
+    "eslint": "^8.29.0",
+    "eslint-plugin-vue": "^9.8.0",
+    "nuxt": "3.0.0",
+    "rollup-plugin-progress": "^1.1.2",
+    "vite-svg-loader": "^3.6.0"
   }
 }
