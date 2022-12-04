@@ -39,3 +39,8 @@ h5 {
 .tag::before {
   content: '#'
 }
+
+.contained {
+  max-width: 1080px;
+  padding: auto 8rem;
+}

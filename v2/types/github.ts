@@ -4,6 +4,7 @@ export interface GithubPinnedRepo {
   link: string;
   description: string;
   language: string;
+  languageColor: string;
   stars: string;
   forks: string;
 }

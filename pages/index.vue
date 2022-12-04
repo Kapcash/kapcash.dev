@@ -66,7 +66,7 @@ export default class HomePage extends Vue {
   githubRepos!: GithubPinnedRepo[]
 
   async asyncData ({ $axios }: Context) {
-    const githubRepos = await $axios.$get<GithubPinnedRepo[]>('https://gh-pinned-repos.egoist.sh/?username=Kapcash', {
+    const githubRepos = await $axios.$get<GithubPinnedRepo[]>('https://gh-pinned-repos.egoist.dev/?username=Kapcash', {
       headers: {
         Accept: 'application/vnd.github.v3+json',
       },
