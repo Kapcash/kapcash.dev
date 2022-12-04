@@ -8,6 +8,7 @@
     <Header />
     <main>
       <GithubProjects class="contained mx-auto" />
+      <MyUniverse />
     </main>
   </div>
 </template>

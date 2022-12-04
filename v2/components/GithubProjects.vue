@@ -1,27 +1,26 @@
 <template>
   <section>
-      <h1 class="font-serif title-decoration text-4xl mt-10 mb-6">
-        My projects on Github
-      </h1>
-      <div class="grid grid-cols-2 gap-4">
-        <GithubCard
-          v-for="pinnedRepo of githubRepos"
-          :key="pinnedRepo.repo"
-          :title="pinnedRepo.repo"
-          :description="pinnedRepo.description"
-          :main-language="pinnedRepo.language"
-          :language-color="pinnedRepo.languageColor"
-          :link="pinnedRepo.link"
-          :nb-stars="pinnedRepo.stars"
-          :nb-forks="pinnedRepo.forks"
-        />
-      </div>
-    </section>
+    <h1 class="font-serif title-decoration text-4xl mt-10 mb-6">
+      My projects on Github
+    </h1>
+    <div class="grid grid-cols-2 gap-4">
+      <GithubCard
+        v-for="pinnedRepo of githubRepos"
+        :key="pinnedRepo.repo"
+        :title="pinnedRepo.repo"
+        :description="pinnedRepo.description"
+        :main-language="pinnedRepo.language"
+        :language-color="pinnedRepo.languageColor"
+        :link="pinnedRepo.link"
+        :nb-stars="pinnedRepo.stars"
+        :nb-forks="pinnedRepo.forks"
+      />
+    </div>
+  </section>
 </template>
 
 <script setup lang="ts">
 import { GithubPinnedRepo } from '~~/types/github';
-import GithubCard from './GithubCard.vue';
 
 const { data: githubRepos } = await useAsyncData(
   'githubProjects',
