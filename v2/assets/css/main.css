@@ -44,3 +44,18 @@ h5 {
   max-width: 1080px;
   padding: auto 8rem;
 }
+
+.title-decoration {
+  position: relative;
+  width: max-content;
+}
+.title-decoration::after {
+  content: '';
+  position: absolute;
+  height: 8px;
+  width: 80%;
+  background: rgba(157, 23, 77, 0.57);
+  left: 30%;
+  bottom: -2px;
+  z-index: -1;
+}

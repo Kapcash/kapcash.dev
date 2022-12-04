@@ -1,6 +1,6 @@
 <template>
-  <section class="">
-      <h1 class="text-4xl mt-10 mb-6">
+  <section>
+      <h1 class="font-serif title-decoration text-4xl mt-10 mb-6">
         My projects on Github
       </h1>
       <div class="grid grid-cols-2 gap-4">
