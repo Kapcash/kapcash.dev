@@ -1,9 +1,9 @@
 <template>
-  <section class="relative py-8">
+  <section class="relative py-8 flex flex-col">
     <h1 class="font-serif title-decoration text-4xl mt-10 mb-6">
       Meme of the week
     </h1>
-    <img :src="weeklyMemeUrl" class="mx-auto">
+    <Frame :img-src="weeklyMemeUrl" class="mx-auto max-h-50vh h-50vh" />
   </section>
 </template>
 

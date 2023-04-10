@@ -1,6 +1,6 @@
 <template>
   <section class="relative bg-pink-800 h-600px">
-    <StackedLayersBg class="absolute top-0 left-0 right-0" />
+    <StackedLayersBg class="absolute top-0 left-0 right-0 w-full" />
     <div class="flex p-16 px-32 h-full items-center">
       <div class="flex-1">3d Earth</div>
       <div class="flex-1">
