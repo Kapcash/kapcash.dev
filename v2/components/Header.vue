@@ -30,7 +30,7 @@
         <a class=" px-6 py-2 border border-pink-700 text-pink-700 rounded" href="resume/">
           See my resume
         </a>
-        <BuyMeABeer class="px-6 py-2" />
+        <BuyMeABeer />
       </div>
     </div>
   </header>

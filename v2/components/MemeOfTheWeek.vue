@@ -1,0 +1,12 @@
+<template>
+  <section class="relative py-8">
+    <h1 class="font-serif title-decoration text-4xl mt-10 mb-6">
+      Meme of the week
+    </h1>
+    <img :src="weeklyMemeUrl" class="mx-auto">
+  </section>
+</template>
+
+<script lang="ts" setup>
+const weeklyMemeUrl = ref("https://res.cloudinary.com/practicaldev/image/fetch/s--DDDvUQUe--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/741b87500f9eip1evmj2.jpg")
+</script>
