@@ -1,9 +1,9 @@
 <template>
   <section>
-    <h1 class="font-serif title-decoration text-4xl mt-10 mb-6">
+    <h1 class="font-serif title-decoration text-2xl md:text-4xl mb-6">
       My projects on Github
     </h1>
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <GithubCard
         v-for="pinnedRepo of githubRepos"
         :key="pinnedRepo.repo"

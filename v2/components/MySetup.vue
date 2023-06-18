@@ -1,9 +1,9 @@
 <template>
-  <section class="relative h-600px">
-    <h1 class="font-serif title-decoration text-4xl mt-10 mb-6">
+  <section class="relative">
+    <h1 class="font-serif title-decoration text-2xl md:text-4xl mb-6">
       My VS Code setup
     </h1>
-    <pre class="bg-gray-100 pa-6">
+    <pre class="bg-gray-100 pa-6 text-xs md:text-base">
 // Variables
 let useDark = !isOutside || isNight
 
@@ -13,6 +13,6 @@ const vscodeSettings = {
   sidebar: 'right' | 'left': 'right',
   iconTheme: 'Material Icon Theme',
 }</pre>
-    <img class="my-16" src="https://stackoverflow.com/users/flair/4870785.png">
+    <img class="mt-16" src="https://stackoverflow.com/users/flair/4870785.png">
   </section>
 </template>

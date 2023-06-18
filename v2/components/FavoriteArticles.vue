@@ -1,10 +1,10 @@
 <template>
-  <section class="py-8">
-    <h1 class="font-serif title-decoration text-4xl mb-8">
+  <section>
+    <h1 class="font-serif title-decoration text-2xl md:text-4xl mb-8">
       Favorite external articles
     </h1>
 
-    <div class="flex flex-wrap gap-8 justify-between">
+    <div class="flex flex-wrap gap-8 justify-center md:justify-between">
       <ArticleCard v-for="article of articles" :link="article.link" :author="article.author" :date="article.date"></ArticleCard>
     </div>
 

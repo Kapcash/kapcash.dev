@@ -1,7 +1,7 @@
 <template>
-  <header class="pt-8 pb-2 bg-pink-100 flex justify-center clipped">
-    <div class="relative">
-      <img src="~/assets/img/moi.jpg" height="350px" class="h-350px"/>
+  <header class="pt-8 pb-12 md:pb-2 bg-pink-100 flex justify-center clipped">
+    <div class="relative hidden md:block ">
+      <img src="~/assets/img/moi.jpg" height="350px" class="h-350px object-cover"/>
       <div class="flex gap-x-1 my-2 justify-center absolute right-1/4 top-1/2 rotate-18 text-black">
         <a href="https://twitter.com/Kapcash" class="hover:text-pink-800">
           <IconTwitter height="18" width="18" fill="currentColor" />
@@ -26,7 +26,7 @@
         Welcome to my personal page where you can get an overview of who I am!<br />
         I contribute to open-source libraries in my free time.
       </p>
-      <div class="mt-8 flex flex-col gap-y-4 w-max">
+      <div class="mt-8 flex flex-col gap-y-4 w-max self-center">
         <a class=" px-6 py-2 border border-pink-700 text-pink-700 rounded hover:border-pink-500 hover:text-pink-500" href="resume/">
           See my resume
         </a>

@@ -1,5 +1,6 @@
 <template>
   <a :href="url" class="article relative max-w-[300px] mb-12">
+    <!-- TODO Add fallback image -->
     <img :src="mainImage" width="100%" height="100%" :alt="title" class="h-full w-full object-cover contrast-75 transition" />
     <div class="absolute -bottom-10 -right-6 max-w-full flex flex-col align-end">
       <p class="bg-pink-800 text-white text-lg font-serif py-2 px-4 offset-border border-pink-800">{{ title }}</p>
