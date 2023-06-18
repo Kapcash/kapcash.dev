@@ -27,7 +27,7 @@
         I contribute to open-source libraries in my free time.
       </p>
       <div class="mt-8 flex flex-col gap-y-4 w-max">
-        <a class=" px-6 py-2 border border-pink-700 text-pink-700 rounded" href="resume/">
+        <a class=" px-6 py-2 border border-pink-700 text-pink-700 rounded hover:border-pink-500 hover:text-pink-500" href="resume/">
           See my resume
         </a>
         <BuyMeABeer />

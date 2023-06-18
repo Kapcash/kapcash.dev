@@ -17,6 +17,7 @@ const zoom = ref(false)
 
 <style scoped>
 .frame-container {
+  min-height: 300px;
   transition: transform 100ms ease-in-out;
 }
 .frame-container.zoom {
