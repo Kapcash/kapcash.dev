@@ -2,7 +2,13 @@
   <section class="relative bg-pink-800 h-600px">
     <StackedLayersBg class="absolute top-0 left-0 right-0 w-full" />
     <div class="flex flex-col md:flex-row p-16 px-32 h-full items-center">
-      <div class="flex-1">3d Earth</div>
+      <div class="flex-1 h-full">
+        <ClientOnly>
+          <Suspense>
+            <EarthUniverse />
+          </Suspense>
+        </ClientOnly>
+      </div>
       <div class="flex-1">
         <div class="p-16 bg-pink-600 border-pink-600 offset-border text-center rounded-sm">
           <span class="text-3xl font-serif italic underline text-white">{{ selectedThematic }}</span>

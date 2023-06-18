@@ -1,5 +1,7 @@
 {
   "private": true,
+  "type": "module",
+  "module": "esnext",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -8,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@types/three": "^0.152.1",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
     "@unocss/nuxt": "^0.47.5",
@@ -16,5 +19,11 @@
     "nuxt": "3.0.0",
     "rollup-plugin-progress": "^1.1.2",
     "vite-svg-loader": "^3.6.0"
+  },
+  "dependencies": {
+    "@tresjs/cientos": "^2.1.4",
+    "@tresjs/core": "^2.1.3",
+    "@tresjs/nuxt": "^1.0.0-alpha.0",
+    "three": "^0.153.0"
   }
 }
