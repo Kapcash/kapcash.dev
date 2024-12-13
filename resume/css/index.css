@@ -46,6 +46,10 @@ h1 {
   font-weight: bold;
 }
 
+h2 {
+  margin-bottom: 1rem;
+}
+
 h1, h2, h3 {
   color: black;
   border-color: black;
@@ -196,7 +200,8 @@ section p {
 
 html {
   background-color: #3f3f3f;
-  font-family: "Roboto", sans-serif;
+  font-family: "Kantumruy Pro", sans-serif;
+  font-optical-sizing: auto;
   font-size: 16px;
 }
 
@@ -348,6 +353,9 @@ main section:not(:first-of-type) h2 {
 #technos > *:last-child {
   margin-bottom: 0.5rem;
 }
+#technos > .subtitle {
+  margin: 1rem 0;
+}
 
 /* Languages */
 #languages li {
@@ -363,8 +371,9 @@ main section:not(:first-of-type) h2 {
   font-size: 32px;
   margin: 0 0.25rem;
 }
-#links a:hover {
-  color: #0020af;
+
+a:hover {
+  color: #152b89;
 }
 
 #referees i {
