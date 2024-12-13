@@ -26,12 +26,12 @@
       <VSCodeSetup />
     </section>
 
-    <section>
+    <!-- <section>
       <h1 class="text-4xl mt-10 mb-6">
         My latest tweets
       </h1>
       <TwitterTimeline />
-    </section>
+    </section> -->
 
     <section>
       <h1 class="text-4xl mt-10 mb-6">
@@ -44,13 +44,13 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-import { Context } from '@nuxt/types'
+// import { Context } from '@nuxt/types'
 import Header from '@/components/Header.vue'
 import GithubCard from '@/components/GithubCard.vue'
 import VSCodeSetup from '@/components/VSCodeSetup.vue'
 import TwitterTimeline from '@/components/TwitterTimeline.vue'
 import SpotifyRecommandation from '@/components/SpotifyRecommandation.vue'
-import { GithubPinnedRepo } from '~/types/github'
+import { GithubPinnedRepo, githubRepos } from '~/types/github'
 
 @Component({
   name: 'HomePage',
@@ -63,29 +63,29 @@ import { GithubPinnedRepo } from '~/types/github'
   },
 })
 export default class HomePage extends Vue {
-  githubRepos!: GithubPinnedRepo[]
+  githubRepos: GithubPinnedRepo[] = githubRepos
 
-  async asyncData ({ $axios }: Context) {
-    const githubRepos = await $axios.$get<GithubPinnedRepo[]>('https://gh-pinned-repos.egoist.sh/?username=Kapcash', {
-      headers: {
-        Accept: 'application/vnd.github.v3+json',
-      },
-      params: {
-        sort: 'updated',
-        per_page: 3,
-        type: 'owner',
-      },
-    }).then(res => res.map(repo => ({
-      ...repo,
-      stars: parseInt(repo.stars as string),
-      forks: parseInt(repo.forks as string),
-      link: `https://github.com/${repo.owner}/${repo.repo}`,
-    })))
+  // async asyncData ({ $axios }: Context) {
+  //   const githubRepos = await $axios.$get<GithubPinnedRepo[]>('https://gh-pinned-repos.egoist.dev/?username=Kapcash', {
+  //     headers: {
+  //       Accept: 'application/vnd.github.v3+json',
+  //     },
+  //     params: {
+  //       sort: 'updated',
+  //       per_page: 3,
+  //       type: 'owner',
+  //     },
+  //   }).then(res => res.map(repo => ({
+  //     ...repo,
+  //     stars: parseInt(repo.stars as string),
+  //     forks: parseInt(repo.forks as string),
+  //     link: `https://github.com/${repo.owner}/${repo.repo}`,
+  //   })))
 
-    return {
-      githubRepos,
-    }
-  }
+  //   return {
+  //     githubRepos,
+  //   }
+  // }
 }
 </script>
 

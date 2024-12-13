@@ -1,5 +1,5 @@
 <script lang="ts">
-import { ComponentOptions, CreateElement, VNodeData, RenderContext } from 'vue'
+import type { ComponentOptions, CreateElement, VNodeData, RenderContext } from 'vue'
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import { ParticlesComponent } from 'particles.vue'
 import maskParticlesOptions from '@/assets/mask_particles'

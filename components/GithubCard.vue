@@ -1,5 +1,5 @@
 <template>
-  <a class="github-card bg-white p-5 my-3 border border-grey-400 rounded-md flex flex-col " :href="link">
+  <a class="github-card bg-white p-5 my-3 border border-gray-200 hover:border-gray-800 rounded-md flex flex-col" :href="link">
     <div class="flex w-full items-center justify-start">
       <GithubProjectLogo class="mr-3 text-gray-500 fill-current" />
       <span class="repo-title text-bold flex-auto min-width-0 text-blue-800">
@@ -69,8 +69,10 @@ export default class GithubCard extends Vue {
 </script>
 
 <style scoped>
+.github-card {
+  transition: border-color 0.2s;
+}
 .github-card:hover {
-  border: 1px solid #b7a6ad;
   cursor: pointer;
 }
 

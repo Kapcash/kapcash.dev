@@ -44,7 +44,7 @@ export default {
   buildModules: [
     '@unocss/nuxt',
     '@nuxt/typescript-build',
-    '@nuxtjs/ngrok',
+    // '@nuxtjs/ngrok',
     'nuxt-svg-loader',
   ],
 
